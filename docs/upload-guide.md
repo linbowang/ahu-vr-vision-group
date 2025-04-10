@@ -78,7 +78,7 @@ categories: paper
 
 1. 准备一张与论文内容相关的图片，建议尺寸为 1200x600 像素，格式可以是 JPG 或 PNG
 2. 图片命名必须与 Markdown 文件名完全一致（不包含 .md 后缀）
-3. 将图片上传到 `assets/images/posts/` 目录中
+3. 将图片上传到 `assets/images/posts/` 目录中 （这里类似上面，一步一步操作即可上传到master分支）
 
 例如：
 - Markdown 文件名为 `2025-03-26-1-wzh.md`
