@@ -188,6 +188,9 @@ layout: default
     {% if page.original_link %}
     <a href="{{ page.original_link }}" target="_blank">查看原文</a>
     {% endif %}
+    {% if page.code %}
+    <a href="{{ page.code }}" target="_blank">查看代码</a>
+    {% endif %}
     <a href="{{ '/' | relative_url }}">返回论文列表</a>
   </div>
   
