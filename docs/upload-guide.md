@@ -45,9 +45,6 @@ original_link: "论文原文链接"
 categories: paper
 ---
 
-## 摘要
-
-在这里写论文摘要...
 
 ## 个人总结
 
