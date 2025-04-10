@@ -9,6 +9,7 @@
 | 2025.03.26 | 邹晋 |            [JamMa: Ultra-lightweight Local Feature Matching with Joint Mamba](https://arxiv.org/abs/2503.03437) (CVPR 2025)             |
 | 2025.03.26 | 张旭阳 |                [ConDSeg: A General Medical Image Segmentation Framework via Contrast-Driven Feature Enhancement](https://arxiv.org/abs/2412.08345) (AAAI 2025)                 |
 | 2025.03.26 | 张国豪 |                              [Low-Light Image Enhancement via New Intuitionistic Fuzzy Generator-Based Retinex Approach](https://ieeexplore.ieee.org/document/10902139) (IEEE Access 2025)                               |
+| 2025.04.10 | 吴世俊 |                              [Spectral Enhancement and Pseudo-Anchor Guidance]([https://ieeexplore.ieee.org/document/10902139](https://arxiv.org/abs/2412.19111)) (IEEE ICASSP 2025)                               |
 
 
 
