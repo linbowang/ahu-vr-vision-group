@@ -15,7 +15,7 @@ title: 论文分享上传指南
 
 ## 1️⃣ 上传步骤
 
-1. 打开[小组仓库](https://github.com/linbowang/ahu-vr-vision-group/tree/master)
+1. 打开[小组仓库](https://github.com/linbowang/ahu-vr-vision-group/tree/master) (注意是master分支)
 2. 进入 `_posts` 目录
 3. 点击 "Add file" → "Create new file"
 4. 按照下述两条规则填写文件名和内容
