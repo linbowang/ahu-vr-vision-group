@@ -11,7 +11,7 @@
 | 2025.03.26 | 张国豪 |                              [Low-Light Image Enhancement via New Intuitionistic Fuzzy Generator-Based Retinex Approach](https://ieeexplore.ieee.org/document/10902139) (IEEE Access 2025)                               |
 | 2025.04.10 | 吴世俊 |                              [Spectral Enhancement and Pseudo-Anchor Guidance](https://arxiv.org/abs/2412.19111) (IEEE ICASSP 2025)                               |
 | 2025.04.10 | 戴龙邦 |                              [The Power of Context: How Multimodality Improves Image Super-Resolution](https://arxiv.org/pdf/2503.14503) (CVPR2025)                               |
-
+| 2025.04.10 | 占美栋 |                              [MemorySAM: Memorize Modalities and Semantics with Segment Anything Model 2 for Multi-modal Semantic Segmentation](https://arxiv.org/pdf/2503.06700) (arxiv3月)                               |
 
 
 
