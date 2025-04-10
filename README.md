@@ -7,6 +7,7 @@
 | 日期 | 汇报人 | 论文 |
 | :---: |:---:|:---:|
 | 2025.03.26 | 潘煜君 | [Segment Any-Quality Images with Generative Latent Space Enhancement](https://linbowang.github.io/ahu-vr-vision-group/papers/3-pyj) (CVPR  2025) |
+| 2025.03.26 | 潘煜君 | [Segment Any](https://linbowang.github.io/ahu-vr-vision-group/papers/4-xk) (CVPR  2025) |
 
 
 ### 📋 分享规则
