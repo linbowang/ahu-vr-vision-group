@@ -1,0 +1,33 @@
+title: AHU VR&Vision Seminars
+description: AHU VR&Vision Seminars论文分享平台
+baseurl: "/ahu-vr-vision-group"
+url: "https://linbowang.github.io"
+
+# Jekyll 配置
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# 论文页面配置
+paginate: 10
+paginate_path: "/page:num/"
+
+# 自动生成摘要
+excerpt_separator: <!--more-->
+
+# Defaults
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "paper"
+      permalink: "/papers/:title/"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

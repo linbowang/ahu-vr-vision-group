@@ -1,0 +1,110 @@
+name: 自动更新README和部署网站
+
+on:
+  push:
+    paths:
+      - '_posts/**'
+      - '_layouts/**'
+      - '_config.yml'
+      - 'assets/**'
+      - '*.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v3
+
+      - name: 设置Ruby环境
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true
+
+      - name: 安装依赖
+        run: gem install jekyll jekyll-feed jekyll-paginate
+
+      - name: 生成论文列表
+        run: |
+          cat > README.md << EOF
+          # 📚 小组内论文分享
+
+          在这里记录我们小组内的论文分享和讨论。每周更新。
+
+          ### 🌟 2025年春季学期
+
+          | 日期 | 汇报人 | 论文 |
+          | :---: |:---:|:---:|
+          EOF
+          
+          # 从_posts目录读取论文信息并添加到README
+          for file in _posts/*.md; do
+            if [ -f "$file" ]; then
+              date=$(grep -m 1 "date:" "$file" | sed 's/date: //')
+              presenter=$(grep -m 1 "presenter:" "$file" | sed 's/presenter: //' | sed 's/"//g')
+              title=$(grep -m 1 "title:" "$file" | sed 's/title: //' | sed 's/"//g')
+              journal=$(grep -m 1 "journal:" "$file" | sed 's/journal: //' | sed 's/"//g')
+          
+              # 获取文件名（不含路径和扩展名）
+              filename=$(basename "$file" .md)
+          
+              # 构建GitHub Pages链接
+              gh_pages_link="https://shixuan7.github.io/ahu-test/papers/${filename#*-*-*-}"
+          
+              # 格式化日期
+              formatted_date=$(date -d "$date" +"%Y.%m.%d" 2>/dev/null || echo "$date")
+          
+              # 添加到README
+              echo "| $formatted_date | $presenter | [$title]($gh_pages_link) ($journal) |" >> README.md
+            fi
+          done
+          
+          # 添加分享规则
+          cat >> README.md << EOF
+
+
+          ### 📋 分享规则
+          1. ⏰ 每周四上午8:00-11:00进行组会报告
+          2. 📊 每人每次分享1篇论文，控制时间在20-30分钟
+          3. 📝 分享内容包括但不限于：
+             - 🔍 论文的核心创新点
+             - 🛠️ 方法的技术细节
+             - 📈 实验结果分析
+             - 💡 个人见解与思考
+          4. 🤝 鼓励积极讨论，提出问题和建议
+          ---
+
+          > 💫 欢迎大家积极参与组会讨论！如有任何建议，请随时提出。
+          EOF
+
+      - name: 提交更新的README
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git commit -m "自动更新论文列表 [skip ci]" || echo "没有变更需要提交"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 构建网站
+        run: jekyll build
+
+      - name: 部署到 GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "_site/"
+
+      - name: 发布网站
+        uses: actions/deploy-pages@v4

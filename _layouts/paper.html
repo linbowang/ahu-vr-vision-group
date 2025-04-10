@@ -1,0 +1,230 @@
+---
+layout: default
+---
+<style>
+  /* 论文详情页样式 */
+  .paper-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .paper-header {
+    background: #f8f9fa;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    border: 1px solid #e9ecef;
+  }
+
+  .paper-header h2 {
+    color: #212529;
+    margin-bottom: 20px;
+    font-size: 2em;
+    border-bottom: none;
+  }
+
+  .paper-metadata {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    color: #495057;
+  }
+
+  .paper-metadata p {
+    margin: 5px 0;
+    font-size: 1.1em;
+  }
+
+  .paper-metadata strong {
+    color: #343a40;
+  }
+
+  .paper-content {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+  }
+
+  .paper-content h2 {
+    color: #343a40;
+    border-bottom: 1px solid #dee2e6;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+  }
+
+  .paper-content p {
+    color: #495057;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  /* 主图样式 */
+  .main-image-container {
+    margin-top: 30px;
+  }
+  
+  .main-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 15px;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  /* 图片模态框样式 */
+  .image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-content {
+    display: block;
+    max-width: 90%;
+    max-height: 90%;
+    margin: auto;
+    animation: zoom 0.3s;
+  }
+  
+  @keyframes zoom {
+    from {transform: scale(0.1)}
+    to {transform: scale(1)}
+  }
+  
+  /* 资源链接样式 */
+  .resources {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 40px 0;
+  }
+
+  .resources a {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: #f8f9fa;
+    color: #495057;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #dee2e6;
+  }
+
+  .resources a:hover {
+    transform: translateY(-2px);
+    background: #fff;
+    color: #212529;
+    border-color: #adb5bd;
+  }
+
+  .resources a:active {
+    transform: translateY(0);
+  }
+
+  .resources a:before {
+    content: '→';
+    margin-right: 8px;
+    font-size: 1.2em;
+    color: #495057;
+  }
+
+  .resources a[href="/"]::before {
+    content: '←';
+  }
+</style>
+
+<div class="paper-detail">
+  <div class="paper-header">
+    <h2>{{ page.title }}</h2>
+    <div class="paper-metadata">
+      <p><strong>期刊：</strong> {{ page.journal }}</p>
+      <p><strong>报告人：</strong> {{ page.presenter }}</p>
+      <p><strong>日期：</strong> {{ page.date | date: "%Y-%m-%d" }}</p>
+    </div>
+  </div>
+
+  <div class="paper-content">
+    {{ content }}
+    
+    {% assign filename_without_extension = page.path | split: '/' | last | split: '.' | first %}
+    {% assign jpg_image_path = '/assets/images/posts/' | append: filename_without_extension | append: '.jpg' %}
+    {% assign png_image_path = '/assets/images/posts/' | append: filename_without_extension | append: '.png' %}
+    
+    <div class="main-image-container">
+      {% if site.static_files | where: "path", jpg_image_path | size > 0 %}
+        <h2>主图</h2>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3C/svg%3E" data-src="{{ jpg_image_path | relative_url }}" alt="主图" class="main-image" loading="lazy" onclick="openImageModal(this.src || this.getAttribute('data-src'))">
+      {% elsif site.static_files | where: "path", png_image_path | size > 0 %}
+        <h2>主图</h2>
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 600'%3E%3C/svg%3E" data-src="{{ png_image_path | relative_url }}" alt="主图" class="main-image" loading="lazy" onclick="openImageModal(this.src || this.getAttribute('data-src'))">
+      {% endif %}
+      
+      <div id="imageModal" class="image-modal" onclick="closeImageModal()">
+        <img class="modal-content" id="modalImage">
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="resources">
+    {% if page.original_link %}
+    <a href="{{ page.original_link }}" target="_blank">查看原文</a>
+    {% endif %}
+    <a href="{{ '/' | relative_url }}">返回论文列表</a>
+  </div>
+  
+  <script>
+    function openImageModal(src) {
+      var modal = document.getElementById("imageModal");
+      var modalImg = document.getElementById("modalImage");
+      modal.style.display = "flex";
+      modalImg.src = src;
+      document.body.style.overflow = "hidden";
+    }
+    
+    function closeImageModal() {
+      var modal = document.getElementById("imageModal");
+      modal.style.display = "none";
+      document.body.style.overflow = "auto";
+    }
+    
+    // 按ESC键关闭图片
+    document.addEventListener('keydown', function(event) {
+      if (event.key === "Escape") {
+        closeImageModal();
+      }
+    });
+    
+    // 预加载图片
+    document.addEventListener('DOMContentLoaded', function() {
+      var mainImage = document.querySelector('.main-image');
+      if (mainImage) {
+        // 当页面内容加载完成后再加载图片
+        setTimeout(function() {
+          var imgSrc = mainImage.getAttribute('data-src');
+          if (imgSrc) {
+            mainImage.setAttribute('src', imgSrc);
+          }
+        }, 100);
+      }
+    });
+  </script>
+</div>
