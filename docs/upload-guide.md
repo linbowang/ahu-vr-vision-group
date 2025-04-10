@@ -60,7 +60,7 @@ categories: paper
 - `presenter`: 你的名字
 - `date`: 报告日期，格式为 YYYY-MM-DD
 - `original_link`: 论文的原文链接（arXiv或官方链接）
-- `code`: （可选）论文对应的代码仓库链接，如果有的话
+- `code`: （可选）论文对应的代码仓库链接，如果有的话 没有的话则删除这个选项
 - `categories`: 固定填写 `paper`
 
 
