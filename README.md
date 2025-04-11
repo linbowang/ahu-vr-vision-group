@@ -7,7 +7,7 @@
 | 日期 | 汇报人 | 论文 |
 | :---: |:---:|:---:|
 | 2025.03.26 | 潘煜君 | [Segment Any-Quality Images with Generative Latent Space Enhancement](https://linbowang.github.io/ahu-vr-vision-group/papers/3-pyj) (CVPR  2025) |
-| 2025.04.10 | 吴世俊 | [Spectral Enhancement and Pseudo-Anchor Guidance](https://linbowang.github.io/ahu-vr-vision-group/papers/3-吴世俊) (ICASSP  2025) |
+| 2025.04.10 | 吴世俊 | [Spectral Enhancement and Pseudo-Anchor Guidance](https://linbowang.github.io/ahu-vr-vision-group/papers/3-wsj) (ICASSP  2025) |
 | 2025.04.10 | 占美栋 | [MemorySAM: Memorize Modalities and Semantics with Segment Anything Model 2 for Multi-modal Semantic Segmentation](https://linbowang.github.io/ahu-vr-vision-group/papers/4-zmd) (arxiv 3月份) |
 
 
