@@ -49,25 +49,26 @@ jobs:
           EOF
           
           # 从_posts目录读取论文信息并添加到README
-          for file in _posts/*.md; do
-            if [ -f "$file" ]; then
-              date=$(grep -m 1 "date:" "$file" | sed 's/date: //')
-              presenter=$(grep -m 1 "presenter:" "$file" | sed 's/presenter: //' | sed 's/"//g')
-              title=$(grep -m 1 "title:" "$file" | sed 's/title: //' | sed 's/"//g')
-              journal=$(grep -m 1 "journal:" "$file" | sed 's/journal: //' | sed 's/"//g')
+          # 获取按日期升序排序的文件列表
+          for file in $(ls _posts/*.md | sort); do
+              if [ -f "$file" ]; then
+                  date=$(grep -m 1 "date:" "$file" | sed 's/date: //')
+                  presenter=$(grep -m 1 "presenter:" "$file" | sed 's/presenter: //' | sed 's/"//g')
+                  title=$(grep -m 1 "title:" "$file" | sed 's/title: //' | sed 's/"//g')
+                  journal=$(grep -m 1 "journal:" "$file" | sed 's/journal: //' | sed 's/"//g')
           
-              # 获取文件名（不含路径和扩展名）
-              filename=$(basename "$file" .md)
+                  # 获取文件名（不含路径和扩展名）
+                  filename=$(basename "$file" .md)
           
-              # 构建GitHub Pages链接
-              gh_pages_link="https://linbowang.github.io/ahu-vr-vision-group/papers/${filename#*-*-*-}"
+                  # 构建GitHub Pages链接
+                  gh_pages_link="https://linbowang.github.io/ahu-vr-vision-group/papers/${filename#*-*-*-}"
           
-              # 格式化日期
-              formatted_date=$(date -d "$date" +"%Y.%m.%d" 2>/dev/null || echo "$date")
+                  # 格式化日期
+                  formatted_date=$(date -d "$date" +"%Y.%m.%d" 2>/dev/null || echo "$date")
           
-              # 添加到README
-              echo "| $formatted_date | $presenter | [$title]($gh_pages_link) ($journal) |" >> README.md
-            fi
+                  # 添加到README
+                  echo "| $formatted_date | $presenter | [$title]($gh_pages_link) ($journal) |" >> README.md
+              fi
           done
           
           # 添加分享规则
