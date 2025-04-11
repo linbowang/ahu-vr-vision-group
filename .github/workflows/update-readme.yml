@@ -64,7 +64,7 @@ jobs:
               filename=$(basename "$file" .md)
           
               # 构建GitHub Pages链接
-              gh_pages_link="https://linbowang.github.io/ahu-vrvision-seminar/papers/${filename#*-*-*-}"
+              gh_pages_link="https://linbowang.github.io/ahu-vr-vision-group/papers/${filename#*-*-*-}"
           
               # 格式化日期
               formatted_date=$(date -d "$date" +"%Y.%m.%d" 2>/dev/null || echo "$date")
