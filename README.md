@@ -8,6 +8,7 @@
 | :---: |:---:|:---:|
 | 2025.04.10 | 占美栋 | [MemorySAM: Memorize Modalities and Semantics with Segment Anything Model 2 for Multi-modal Semantic Segmentation](https://linbowang.github.io/ahu-vrvision-seminar/papers/4-zmd) (arxiv 3月份) |
 | 2025.04.10 | 吴世俊 | [Spectral Enhancement and Pseudo-Anchor Guidance](https://linbowang.github.io/ahu-vrvision-seminar/papers/3-wsj) (ICASSP  2025) |
+| 2025.04.10 | 宫国栋 | [LOCR: Location-Guided Transformer for Optical Character Recognition](https://linbowang.github.io/ahu-vrvision-seminar/papers/2-ggd) (EMNLP  2024) |
 | 2025.03.26 | 潘煜君 | [Segment Any-Quality Images with Generative Latent Space Enhancement](https://linbowang.github.io/ahu-vrvision-seminar/papers/3-pyj) (CVPR  2025) |
 
 
