@@ -52,37 +52,26 @@ jobs:
           declare -A file_dates
           declare -a file_order
       
-          # 遍历所有文章文件
-          for file in _posts/*.md; do
+          # 对文件进行排序
+          for file in $(ls -1 _posts/*.md | sort -r); do
             if [ -f "$file" ]; then
-              # 提取日期并转换为可排序格式
-              date_str=$(grep -m 1 "date:" "$file" | sed 's/date: //' | tr -d '"' | xargs)
-              timestamp=$(date -d "$date_str" +"%s" 2>/dev/null)  # 转换为Unix时间戳
-              
-              # 生成唯一键值避免冲突
-              key="${timestamp}_${RANDOM}"
-              file_dates["$key"]="$file"
-              file_order+=("$key")
+              date=$(grep -m 1 "date:" "$file" | sed 's/date: //')
+              presenter=$(grep -m 1 "presenter:" "$file" | sed 's/presenter: //' | sed 's/"//g')
+              title=$(grep -m 1 "title:" "$file" | sed 's/title: //' | sed 's/"//g')
+              journal=$(grep -m 1 "journal:" "$file" | sed 's/journal: //' | sed 's/"//g')
+          
+              # 获取文件名（不含路径和扩展名）
+              filename=$(basename "$file" .md)
+          
+              # 构建GitHub Pages链接
+              gh_pages_link="https://linbowang.github.io/ahu-vrvision-seminar/papers/${filename#*-*-*-}"
+          
+              # 格式化日期
+              formatted_date=$(date -d "$date" +"%Y.%m.%d" 2>/dev/null || echo "$date")
+          
+              # 添加到README
+              echo "| $formatted_date | $presenter | [$title]($gh_pages_link) ($journal) |" >> README.md
             fi
-          done
-      
-          # 按时间戳倒序排序
-          mapfile -t sorted_keys < <(printf "%s\n" "${file_order[@]}" | sort -r -t_ -k1,1n)
-      
-          # 生成表格内容
-          for key in "${sorted_keys[@]}"; do
-            file="${file_dates[$key]}"
-            # 提取元数据（保持原有逻辑）
-            date=$(grep -m 1 "date:" "$file" | sed 's/date: //')
-            presenter=$(grep -m 1 "presenter:" "$file" | sed 's/presenter: //' | sed 's/"//g')
-            title=$(grep -m 1 "title:" "$file" | sed 's/title: //' | sed 's/"//g')
-            journal=$(grep -m 1 "journal:" "$file" | sed 's/journal: //' | sed 's/"//g')
-            filename=$(basename "$file" .md)
-            gh_pages_link="https://linbowang.github.io/ahu-vr-vision-group/papers/${filename#*-*-*-}"
-            formatted_date=$(date -d "$date" +"%Y.%m.%d" 2>/dev/null || echo "$date")
-      
-            # 追加到README
-            echo "| $formatted_date | $presenter | [$title]($gh_pages_link) ($journal) |" >> README.md
           done
           
           # 添加分享规则
