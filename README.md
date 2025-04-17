@@ -6,6 +6,7 @@
 
 | 日期 | 汇报人 | 论文 |
 | :---: |:---:|:---:|
+| 2025.04.17 | 潘煜君 | [LSNet: See Large, Focus Small](https://linbowang.github.io/ahu-vr-vision-group/papers/1-pyj) (CVPR 2025) |
 | 2025.04.10 | 占美栋 | [MemorySAM: Memorize Modalities and Semantics with Segment Anything Model 2 for Multi-modal Semantic Segmentation](https://linbowang.github.io/ahu-vr-vision-group/papers/4-zmd) (arxiv 3月份) |
 | 2025.04.10 | 吴世俊 | [Spectral Enhancement and Pseudo-Anchor Guidance](https://linbowang.github.io/ahu-vr-vision-group/papers/3-wsj) (ICASSP  2025) |
 | 2025.04.10 | 宫国栋 | [LOCR: Location-Guided Transformer for Optical Character Recognition](https://linbowang.github.io/ahu-vr-vision-group/papers/2-ggd) (EMNLP  2024) |
@@ -13,7 +14,7 @@
 
 
 ### 📋 分享规则
-1. ⏰ 每周四上午8:00-11:00进行组会报告
+1. ⏰ 每周四上午8:30-11:30进行组会报告
 2. 📊 每人每次分享1篇论文，控制时间在20-30分钟
 3. 📝 分享内容包括但不限于：
    - 🔍 论文的核心创新点
