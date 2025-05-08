@@ -6,6 +6,7 @@
 
 | 日期 | 汇报人 | 论文 |
 | :---: |:---:|:---:|
+| 2025.05.08 | 潘煜君 | [LoftUp: Learning a Coordinate-Based Feature Upsampler for  Vision Foundation Models](https://linbowang.github.io/ahu-vr-vision-group/papers/4-pyj) (Arxiv 2504) |
 | 2025.04.17 | 倪赢杰 | [SAM-REF: Introducing Image-Prompt Synergy during Interaction for Detail](https://linbowang.github.io/ahu-vr-vision-group/papers/2-nyj) (CVPR 2025) |
 | 2025.04.17 | 潘煜君 | [LSNet: See Large, Focus Small](https://linbowang.github.io/ahu-vr-vision-group/papers/1-pyj) (CVPR 2025) |
 | 2025.04.10 | 占美栋 | [MemorySAM: Memorize Modalities and Semantics with Segment Anything Model 2 for Multi-modal Semantic Segmentation](https://linbowang.github.io/ahu-vr-vision-group/papers/4-zmd) (arxiv 3月份) |
