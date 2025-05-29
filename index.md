@@ -30,7 +30,57 @@ title: 首页
   </ol>
 </div>
 
-{% include todo_list.md %}
+<div class="todo-section" markdown="1" style="background: #E8F5E9; padding: 25px; border-radius: 10px; margin: 30px 0;">
+
+## 研究TODO：
+
+### 多模态大模型的生成能力探索
+
+**基本思路：** 研究视觉和语言大模型协同工作的框架，探索如何利用视觉信息引导更精确的文本生成。重点关注视觉特征与文本表示的对齐方法以及跨模态知识的迁移。
+
+**参考论文：** [SEED: Efficient Visual Expert for Streaming Multimodal Dialogue](https://arxiv.org/abs/2312.00752)
+
+---
+
+### 视觉表征学习中的自监督方法
+
+**基本思路：** 探索无需大量标注数据的视觉表征学习方法。通过设计合适的预训练任务，让模型自动学习图像的语义特征，提高模型在下游任务中的泛化能力。
+
+**参考论文：** [EVA: Exploring the Limits of Masked Visual Representation Learning at Scale](https://arxiv.org/abs/2304.12210)
+
+---
+
+### 基于Diffusion的图像合成与编辑
+
+**基本思路：** 研究扩散模型在图像生成和编辑中的应用。重点关注条件控制、高精度图像合成以及低资源场景下的模型训练方法。
+
+**参考论文：** [ControlNet: Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.08453)
+
+</div>
+
+<style>
+.todo-section h3 {
+  color: #1B5E20;
+  margin-top: 25px;
+  margin-bottom: 15px;
+}
+
+.todo-section a {
+  color: #388E3C;
+  text-decoration: none;
+}
+
+.todo-section a:hover {
+  text-decoration: underline;
+}
+
+.todo-section hr {
+  border: 0;
+  height: 1px;
+  background: #81C784;
+  margin: 20px 0;
+}
+</style>
 
 ## 论文分享列表
 
