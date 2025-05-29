@@ -32,7 +32,8 @@ title: 首页
 
 <div class="todo-section" markdown="1" style="background: #E8F5E9; padding: 25px; border-radius: 10px; margin: 30px 0;">
 
-## 研究TODO：
+## 研究思路 TODO-LIST：
+
 
 ### 多模态大模型的生成能力探索
 
