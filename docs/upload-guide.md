@@ -88,7 +88,46 @@ categories: paper
 
 这样系统会自动在「研究内容」和「主图」部分之间显示您上传的图片。
 
-## 6️⃣ 常见问题
+## 6️⃣ 研究TODO任务上传指南
+
+为了帮助小组成员了解当前研究方向和任务，网站首页包含了研究TODO列表。如果你想添加或修改TODO任务，请按照以下步骤操作：
+
+1. 访问[小组仓库](https://github.com/linbowang/ahu-vr-vision-group/tree/master)的`index.md`文件
+2. 点击编辑按钮（铅笔图标）
+3. 在文件中找到以下标记的TODO部分（位于小组会制度和论文分享列表之间）：
+
+```markdown
+<div class="todo-section" markdown="1" style="background: #E8F5E9; padding: 25px; border-radius: 10px; margin: 30px 0;">
+
+## 研究思路 TODO-LIST：
+
+
+### 多模态大模型的生成能力探索
+...
+```
+
+4. 按照现有格式添加新的TODO项目，每个项目的格式如下：
+
+```markdown
+### 研究主题标题
+
+**基本思路：** 描述研究思路...
+
+**参考论文：** [论文标题](论文链接)
+
+---
+```
+
+5. 提交修改（Commit changes）
+
+### ⚠️ 注意事项
+
+1. 请保持格式一致，特别是Markdown语法
+2. 分隔线（`---`）用于视觉上分隔不同的项目，最后一个项目后不需要分隔线
+3. 参考论文链接最好使用arxiv或官方链接
+4. 提交后，GitHub Actions会自动更新网站
+
+## 7️⃣ 常见问题
 
 1. **Q: 提交后网站没有更新？**
    A: 请等待1-2分钟，GitHub Actions需要一些时间来构建和部署网站。
