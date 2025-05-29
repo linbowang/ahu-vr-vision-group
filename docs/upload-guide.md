@@ -96,28 +96,11 @@ categories: paper
 2. 点击编辑按钮（铅笔图标）
 3. 在文件中找到以下标记的TODO部分（位于小组会制度和论文分享列表之间）：
 
-```markdown
-<div class="todo-section" markdown="1" style="background: #E8F5E9; padding: 25px; border-radius: 10px; margin: 30px 0;">
+   ```markdown
+   研究思路 TODO-LIST：
+   ```
 
-## 研究思路 TODO-LIST：
-
-
-### 多模态大模型的生成能力探索
-...
-```
-
-4. 按照现有格式添加新的TODO项目，每个项目的格式如下：
-
-```markdown
-### 研究主题标题
-
-**基本思路：** 描述研究思路...
-
-**参考论文：** [论文标题](论文链接)
-
----
-```
-
+4. 按照现有格式添加新的TODO项目，每个项目的格式可以直接复制之前的。
 5. 提交修改（Commit changes）
 
 ### ⚠️ 注意事项
