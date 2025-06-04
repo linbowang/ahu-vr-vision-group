@@ -77,6 +77,11 @@ title: 首页
 ](https://ojs.aaai.org/index.php/AAAI/article/view/32630)
 **参考论文：** [Test-Time Domain Generalization via Universe Learning A Multi-GraphMatching Approach for Medical Image Segmentation
 ](https://arxiv.org/abs/2503.13012)
+
+---
+### 关于建立双视图匹配多图工作
+**基本思路：** 参考Test-Time Domain Generalization via Universe Learning: A Multi-Graph Matching Approach for Medical Image Segmentation论文建立多图匹配。
+**参考论文：** [Test-Time Domain Generalization via Universe Learning: A Multi-Graph Matching Approach for Medical Image Segmentation](https://arxiv.org/abs/2503.13012)
 </div>
 
 <style>
