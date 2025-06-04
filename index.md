@@ -33,7 +33,12 @@ title: 首页
 <div class="todo-section" markdown="1" style="background: #E8F5E9; padding: 25px; border-radius: 10px; margin: 30px 0;">
 
 ## 研究思路 TODO：
+### 关于建立双视图匹配多图工作
+**基本思路：** 参考Test-Time Domain Generalization via Universe Learning: A Multi-Graph Matching Approach for Medical Image Segmentation论文建立多图匹配。
+**参考论文：** [Test-Time Domain Generalization via Universe Learning: A Multi-Graph Matching Approach for Medical Image Segmentation]
+(https://arxiv.org/abs/2503.13012)
 
+---
 
 ### 多模态大模型的生成能力探索
 
@@ -77,12 +82,6 @@ title: 首页
 ](https://ojs.aaai.org/index.php/AAAI/article/view/32630)
 **参考论文：** [Test-Time Domain Generalization via Universe Learning A Multi-GraphMatching Approach for Medical Image Segmentation
 ](https://arxiv.org/abs/2503.13012)
-
----
-### 关于建立双视图匹配多图工作
-**基本思路：** 参考Test-Time Domain Generalization via Universe Learning: A Multi-Graph Matching Approach for Medical Image Segmentation论文建立多图匹配。
-**参考论文：** [Test-Time Domain Generalization via Universe Learning: A Multi-Graph Matching Approach for Medical Image Segmentation]
-(https://arxiv.org/abs/2503.13012)
 </div>
 
 <style>
