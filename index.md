@@ -43,6 +43,15 @@ title: 首页
 
 ---
 
+### 基于Diffusion的双视图特征匹配
+
+**基本思路：** 输入匹配对，通过扩散模型在中间特征上添加噪声，再学习逐步去噪得到正确匹配对。
+
+**参考论文：** [DiffGlue：Diffusion-Aided Image Feature Matching](https://dl.acm.org/doi/abs/10.1145/3664647.3681069?download=true)
+**参考论文：** [U-Match: Two-view Correspondence Learning with Hierarchy-aware Local Context Aggregation](https://www.ijcai.org/proceedings/2023/130)
+
+---
+
 ### 视觉表征学习中的自监督方法
 
 **基本思路：** 探索无需大量标注数据的视觉表征学习方法。通过设计合适的预训练任务，让模型自动学习图像的语义特征，提高模型在下游任务中的泛化能力。
