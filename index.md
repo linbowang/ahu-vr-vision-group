@@ -57,6 +57,17 @@ title: 首页
 
 **参考论文：** [ControlNet: Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.08453)
 
+---
+
+### 关于建立知识图谱的重识别工作
+
+**基本思路：** 利用知识图谱编码行人身体关键点（如头部、肩膀、手臂、腿部等）之间或者不同模态图像间不同身份的空间和语义关系。从单一模态的可见关键点特征推断另一模态的不可见关键点特征。
+结合全局特征和局部关键点特征，生成跨模态一致的行人表示，用于身份匹配。
+
+**参考论文：** [Infer the Whole from a Glimpse of a Part: Keypoint-Based Knowledge Graph for Vehicle Re-Identification
+](https://ojs.aaai.org/index.php/AAAI/article/view/32630)
+**参考论文：** [Test-Time Domain Generalization via Universe Learning A Multi-GraphMatching Approach for Medical Image Segmentation
+](https://arxiv.org/abs/2503.13012)
 </div>
 
 <style>
