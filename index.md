@@ -39,6 +39,12 @@ title: 首页
 
 ---
 
+### 关于深度几何先验加入注意力
+**基本思路：** 参考DFormerv2  Geometry Self-Attention for RGBD Semantic Segmentation论文的深度几何先验把深度信息用到融合中。
+**参考论文：** [DFormerv2  Geometry Self-Attention for RGBD Semantic Segmentation](https://arxiv.org/abs/2504.04701)
+
+---
+
 ### 多模态大模型的生成能力探索
 
 **基本思路：** 研究视觉和语言大模型协同工作的框架，探索如何利用视觉信息引导更精确的文本生成。重点关注视觉特征与文本表示的对齐方法以及跨模态知识的迁移。
