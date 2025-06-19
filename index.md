@@ -33,6 +33,16 @@ title: 首页
 <div class="todo-section" markdown="1" style="background: #E8F5E9; padding: 25px; border-radius: 10px; margin: 30px 0;">
 
 ## 研究思路 TODO：
+
+### 两次矩阵转置乘法建立相似度
+
+**基本思路：** A与B_T相乘，B 与 A_T 相乘，等价于（要接近）A乘A_T的结果（原理？）
+**时间：** 2025年06月19日
+
+**参考论文：** [Attention Bootstrapping for Multi-Modal Test-Time Adaptation](http://arxiv.org/abs/2503.02221)
+
+---
+
 ### 关于建立双视图匹配多图工作
 **基本思路：** 参考Test-Time Domain Generalization via Universe Learning: A Multi-Graph Matching Approach for Medical Image Segmentation论文建立多图匹配。
 **参考论文：** [Test-Time Domain Generalization via Universe Learning: A Multi-Graph Matching Approach for Medical Image Segmentation](https://arxiv.org/abs/2503.13012)
@@ -45,13 +55,6 @@ title: 首页
 
 ---
 
-### 多模态大模型的生成能力探索
-
-**基本思路：** 研究视觉和语言大模型协同工作的框架，探索如何利用视觉信息引导更精确的文本生成。重点关注视觉特征与文本表示的对齐方法以及跨模态知识的迁移。
-
-**参考论文：** [SEED: Efficient Visual Expert for Streaming Multimodal Dialogue](https://arxiv.org/abs/2312.00752)
-
----
 
 ### 基于Diffusion的双视图特征匹配
 
@@ -62,21 +65,7 @@ title: 首页
 
 ---
 
-### 视觉表征学习中的自监督方法
 
-**基本思路：** 探索无需大量标注数据的视觉表征学习方法。通过设计合适的预训练任务，让模型自动学习图像的语义特征，提高模型在下游任务中的泛化能力。
-
-**参考论文：** [EVA: Exploring the Limits of Masked Visual Representation Learning at Scale](https://arxiv.org/abs/2304.12210)
-
----
-
-### 基于Diffusion的图像合成与编辑
-
-**基本思路：** 研究扩散模型在图像生成和编辑中的应用。重点关注条件控制、高精度图像合成以及低资源场景下的模型训练方法。
-
-**参考论文：** [ControlNet: Adding Conditional Control to Text-to-Image Diffusion Models](https://arxiv.org/abs/2302.08453)
-
----
 
 ### 关于建立知识图谱的重识别工作
 
@@ -87,6 +76,8 @@ title: 首页
 ](https://ojs.aaai.org/index.php/AAAI/article/view/32630)
 **参考论文：** [Test-Time Domain Generalization via Universe Learning A Multi-GraphMatching Approach for Medical Image Segmentation
 ](https://arxiv.org/abs/2503.13012)
+
+
 </div>
 
 <style>
